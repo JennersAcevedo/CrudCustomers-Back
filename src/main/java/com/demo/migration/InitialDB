@@ -1,0 +1,26 @@
+create table company (
+	company_id serial4 primary key not null,
+	name varchar(100) not null,
+	phone varchar(20)
+)
+
+create table customer(
+	customer_id serial4 primary key not null,
+	name varchar(50) not null,
+	company_id INTEGER REFERENCES company (company_id),
+	phone varchar(20)
+)
+
+create table address(
+	address_id serial4 primary key not null,
+	line_1 varchar(100) not null,
+	line_2 varchar(100) null,
+	line_3 varchar(100) null,
+	state varchar(70) not null,
+	city varchar(70) not null,
+	country varchar(70) not null,
+	reference_type int4 not null,
+	reference_id int4 not null
+)
+-50 company
+-70 customer
